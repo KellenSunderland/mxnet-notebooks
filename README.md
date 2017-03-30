@@ -34,7 +34,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
       ```bash
         chmod 400 $PERM
-        ssh -i $PERM -L 8888:localhost:8888 ubuntu@HOSTNAME
+        ssh -i $PERM -L 8888:localhost:8888 ec2-user@HOSTNAME
       ```
 
       Here we forward the EC2 machine's 8888 port into localhost.
