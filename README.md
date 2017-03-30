@@ -44,14 +44,15 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
       ```bash
         sudo yum install -y graphviz
         git clone https://github.com/dmlc/mxnet-notebooks
-        jupyter notebook &
+        jupyter notebook
       ```
-   	  We can optional run `~/update_mxnet.sh` to update MXNet to the newest version.
+   	  Leave this ssh session open and connected while using the python notebooks.
 
    5. Now we are able to view and edit the notebooks on the browser using the URL: http://localhost:8888/tree/mxnet-notebooks/python/outline.ipynb
 
-   6. Finally we can run the following command to keep track of GPU memory and core usage
+   6. Finally you may want to connect another ssh session and run the following command to keep track of GPU memory and core usage
         ```bash
+        ssh -i $PERM ec2-user@HOSTNAME
         watch -n 1 nvidia-smi
         ```
 ## How to develop
