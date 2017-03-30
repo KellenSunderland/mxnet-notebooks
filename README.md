@@ -21,7 +21,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
   If you have a AWS account, here is an easier way to run the notebooks:
 
-  1.  Launch a p2.2xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2. Remember to open the TCP port 8888 in the security group.
+  1.  Launch a p2.xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2. Remember to open the TCP port 8888 in the security group.
 
   2.  Once launch is succeed, setup the following variable with proper value
 
