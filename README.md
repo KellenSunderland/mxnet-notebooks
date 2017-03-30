@@ -42,6 +42,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
    4. Clone this repo on the EC2 machine and run jupyter
 
       ```bash
+        sudo yum install -y graphviz
         git clone https://github.com/dmlc/mxnet-notebooks
         jupyter notebook
       ```
