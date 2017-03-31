@@ -43,6 +43,9 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
       ```bash
         sudo yum install -y graphviz
+        sudo mkdir /efs
+        sudo chown ec2-user:ec2-user /efs
+        cd /efs
         git clone https://github.com/dmlc/mxnet-notebooks
         jupyter notebook
       ```
