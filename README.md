@@ -55,7 +55,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
    6. Finally you may want to connect another ssh session and run the following command to keep track of GPU memory and core usage
         ```bash
-        ssh -i $PERM ec2-user@HOSTNAME
+        ssh -i $PERM ec2-user@$HOSTNAME
         watch -n 1 nvidia-smi
         ```
 ## How to develop
