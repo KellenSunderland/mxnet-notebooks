@@ -21,23 +21,20 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
   If you have a AWS account, here is an easier way to run the notebooks:
 
-  1.  Launch a p2.xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2. Remember to open the TCP port 8888 in the security group.
+  1.  Launch a p2.xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2.
 
-  2.  Once launch is succeed, setup the following variable with proper value
+#### Linux and OSX Users:
+  2.  Once launch has succeeded we'll setup a few variables with the proper hostnames, and then connect via SSH.  At the same time we'll enable port 8888 to be tunneled over our connection so that we can eventually access our jupyter notebooks with a local browser.
 
     ```bash
       export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
       export PERM=~/Downloads/my.pem
+      chmod 400 $PERM
+      ssh -i $PERM -L 8888:localhost:8888 ec2-user@HOSTNAME
     ```
-
-   3. Now we should be able to ssh to the machine by
-
-      ```bash
-        chmod 400 $PERM
-        ssh -i $PERM -L 8888:localhost:8888 ec2-user@HOSTNAME
-      ```
-
-      Here we forward the EC2 machine's 8888 port into localhost.
+    
+#### Windows Users:
+  2.  Unfortunately getting connected with Windows requires a few additional steps.  You'll need to install Putty and then follow two sections of [this guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).  First follow the 'Converting Your Private Key Using PuTTYgen' and then follow the 'Starting a PuTTY Session' section.  **Important**:  Before opening a connection there's one last setting to set which will allow you to connect locally to your jupyter notebook. Open the setting under Connection->SSH->Tunnels and add a tunnel from source port 8888 to local port 8888.  Now you can proceed to connect and get a shell the the EC2 instance.
 
    4. Clone this repo on the EC2 machine and run jupyter
 
