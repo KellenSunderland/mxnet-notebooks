@@ -24,9 +24,9 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
   1.  Launch a p2.xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2.
 
 #### Linux and OSX Users:
-  2.  Once launch has succeeded we'll setup a few variables with the proper hostnames, and then connect via SSH.  At the same time we'll enable port 8888 to be tunneled over our connection so that we can eventually access our jupyter notebooks with a local browser.
+  2.  Once launch has succeeded we'll setup a few variables with the proper hostnames, and then connect via SSH.  At the same time we'll enable port 8888 to be tunneled over our connection so that we can eventually access our jupyter notebooks with a local browser.  ***Note*** when copying from the console it may prepend your hostname with root@.  For the AMI we are using the correct user is ec2-user@.
 
-    ```bash
+    ```shell
       export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
       export PERM=~/Downloads/my.pem
       chmod 400 $PERM
@@ -38,7 +38,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
 
    4. Once you've connected to your EC2 machine, clone this repo on the EC2 machine and run jupyter
 
-      ```bash
+      ```shell
         sudo yum install -y graphviz
         sudo mkdir /efs
         sudo chown ec2-user:ec2-user /efs
@@ -51,7 +51,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
    5. Now we are able to view and edit the notebooks on the browser using the URL: http://localhost:8888/tree/mxnet-notebooks/python/outline.ipynb
 
    6. Finally you may want to connect another ssh session and run the following command to keep track of GPU memory and core usage
-        ```bash
+        ```shell
         ssh -i $PERM ec2-user@$HOSTNAME
         watch -n 1 nvidia-smi
         ```
