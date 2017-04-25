@@ -24,14 +24,14 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
   1.  Launch a p2.xlarge instance by using AMI `ami-6e5d6808` on Ireland (eu-west-1). The Deep Learning AMI v2.0 for Amazon Linux is designed to continue to provide a stable, secure, and high performance execution environment for deep learning applications running on Amazon EC2.
 
 #### Linux and OSX Users:
-  2.  Once launch has succeeded we'll setup a few variables with the proper hostnames, and then connect via SSH.  At the same time we'll enable port 8888 to be tunneled over our connection so that we can eventually access our jupyter notebooks with a local browser.  ***Note*** when copying from the console it may prepend your hostname with root@.  For the AMI we are using the correct user is ec2-user@.
+  2.  Once launch has succeeded we'll setup a few variables with the proper hostnames, and then connect via SSH.  At the same time we'll enable port 8888 to be tunneled over our connection so that we can eventually access our jupyter notebooks with a local browser.  ***Note*** when copying from the console it may prepend your hostname with root.  For the AMI we are using the correct user is ec2-user.
 
-    ```shell
-      export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
-      export PERM=~/Downloads/my.pem
-      chmod 400 $PERM
-      ssh -i $PERM ec2-user@HOSTNAME
-    ```
+      ```shell
+        export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
+        export PERM=~/Downloads/my.pem
+        chmod 400 $PERM
+        ssh -i $PERM ec2-user@HOSTNAME
+      ```
     
 #### Windows Users:
   2.  If you don't already have Putty you'll need to install it, then follow two sections of [this guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).  First follow the 'Converting Your Private Key Using PuTTYgen' and then follow the 'Starting a PuTTY Session' section. 
