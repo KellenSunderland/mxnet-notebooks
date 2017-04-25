@@ -30,7 +30,7 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
         export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
         export PERM=~/Downloads/my.pem
         chmod 400 $PERM
-        ssh -i $PERM -L 8888:localhost:8888 ec2-user@HOSTNAME
+        ssh -i $PERM -L 8888:localhost:8888 ec2-user@$HOSTNAME
       ```
     
 #### Windows Users:
