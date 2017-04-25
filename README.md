@@ -30,13 +30,13 @@ The python notebooks are written in [Jupyter](http://jupyter.org/).
       export HOSTNAME=ec2-107-22-159-132.compute-1.amazonaws.com
       export PERM=~/Downloads/my.pem
       chmod 400 $PERM
-      ssh -i $PERM -L 8888:localhost:8888 ec2-user@HOSTNAME
+      ssh -i $PERM ec2-user@HOSTNAME
     ```
     
 #### Windows Users:
-  2.  Unfortunately getting connected with Windows requires a few additional steps.  You'll need to install Putty and then follow two sections of [this guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).  First follow the 'Converting Your Private Key Using PuTTYgen' and then follow the 'Starting a PuTTY Session' section.  **Important**:  Before opening a connection there's one last setting to set which will allow you to connect locally to your jupyter notebook. Open the setting under Connection->SSH->Tunnels and add a tunnel from source port 8888 to local port 8888.  Now you can proceed to connect and get a shell the the EC2 instance.
+  2.  If you don't already have Putty you'll need to install it, then follow two sections of [this guide](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).  First follow the 'Converting Your Private Key Using PuTTYgen' and then follow the 'Starting a PuTTY Session' section. 
 
-   4. Clone this repo on the EC2 machine and run jupyter
+   4. Once you've connected to your EC2 machine, clone this repo on the EC2 machine and run jupyter
 
       ```bash
         sudo yum install -y graphviz
